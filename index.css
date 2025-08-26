@@ -166,10 +166,10 @@ img{
     display: grid;
     grid-template-rows: 150px 1fr;
     position: relative;
-}
+ }
 #section-1 header{
     text-align: center;
-    padding: 100px;
+    padding: 50px;
 }
 #section-1 header h1{
     font-size: 25px;
@@ -191,11 +191,15 @@ img{
 #section-1 .img-container video{
     width: 100%;
     height: 100%;
+    animation: fade-left linear;
+    animation-timeline: view(500px 0px);
 }
 #section-1 .text-container{
     padding: 30px 50px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
+    animation: fade-right linear ;
+    animation-timeline: view(800px 0px);
 }
 #section-1 .text-container button{
     margin-top: 10px;
@@ -235,6 +239,8 @@ img{
 #section-2 .img-container video{
     width: 100%;
     height: 100%;
+    animation: fade-right linear;
+    animation-timeline: view(800px 0px);
 }
 #section-2 .text-container{
     display: grid;
@@ -243,6 +249,8 @@ img{
     font-family: Arial, Helvetica, sans-serif;
     color: var(--color-primaryFont);
     display: grid;
+    animation: fade-left linear;
+    animation-timeline: view(900px 10px);
 }
 #section-2 .text-container section h1{
     margin-bottom: 10px;
@@ -277,12 +285,16 @@ img{
     width: 100%;
     height: 100%;
     border-radius: 5px;
+    animation: fade-right linear;
+    animation-timeline: view(800px 0px);
 }
 #section-3 main .text-container{
     padding: 10px 50px;
     text-align: left;
     align-content: center;
     font-family: Arial, Helvetica, sans-serif;
+    animation: fade-left linear;
+    animation-timeline: view(800px 0px);
 }
 #section-3 main .text-container h1{
     margin-bottom: 20px;
@@ -364,11 +376,15 @@ img{
     width: 100%;
     height: 100%;
     border-radius: 5px;
+    animation: fade-left linear;
+    animation-timeline: view(800px 0px);
 }
 #section-5 .text-container{
     padding: 100px 10px;
     color: var(--color-primaryFont);
     font-family: Arial, Helvetica, sans-serif;
+    animation: fade-left linear;
+    animation-timeline: view(800px 0px);
 }
 #section-5 .text-container h1{
     font-size: 30px;
@@ -389,6 +405,8 @@ img{
     padding: 100px 100px;
     font-family: Arial, Helvetica, sans-serif;
     position: relative;
+    animation: fade-left linear;
+    animation-timeline: view(800px 0px);
 }
 #section-6 main .text-container{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -436,6 +454,29 @@ img{
     padding: 100px 100px;
     text-align: center;
     align-content: center;
+}
+@keyframes fade-left {
+    from{
+        transform: translateX(-300px);
+        scale: 0.7;
+    }
+    to{
+        transform: translateX(0px);
+        scale: 1;
+    }
+    
+}
+@keyframes fade-right {
+    from{
+        transform: translateX(300px);
+        opacity: 0;
+        scale: 0.8;
+    }
+    to{
+        scale: 1;
+        opacity: 1;
+        transform: translateX(0px);
+    }
 }
 @media (max-width:1080px) {
     #hero{
